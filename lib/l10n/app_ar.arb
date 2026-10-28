@@ -285,5 +285,6 @@
   "reminderToday": "{card}: ميعاد السداد النهارده",
   "reminderSoon": "{card}: ميعاد السداد بعد {days} أيام",
   "reminderBody": "افتح كارد جارديان للتفاصيل.",
-  "deviceCompromisedWarning": "الموبايل ده شكله متعمله root أو jailbreak. ممكن تطبيقات تانية تقدر تقرا بياناتك."
+  "deviceCompromisedWarning": "الموبايل ده شكله متعمله root أو jailbreak. ممكن تطبيقات تانية تقدر تقرا بياناتك.",
+  "permissionRestrictedHint": "لم يتم السماح. لو أندرويد قال إنه إعداد مقيّد: الإعدادات ← التطبيقات ← CardGuardian ← ⋮ ← السماح بالإعدادات المقيّدة، وبعدين جرّب تاني."
 }

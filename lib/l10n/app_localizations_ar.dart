@@ -100,12 +100,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get privacyPoint1 => 'مفيش سيرفرات ولا سحابة ولا إعلانات ولا تتبع.';
 
   @override
-  String get privacyPoint2 =>
-      'انت اللي بتختار بالظبط أنهي رسايل بنك التطبيق يقراها.';
+  String get privacyPoint2 => 'انت اللي بتختار بالظبط أنهي رسايل بنك التطبيق يقراها.';
 
   @override
-  String get privacyPoint3 =>
-      'كل حاجة متشفرة بمفتاح عمره ما بيخرج من الموبايل.';
+  String get privacyPoint3 => 'كل حاجة متشفرة بمفتاح عمره ما بيخرج من الموبايل.';
 
   @override
   String get privacyPoint4 => 'رسايلك الأصلية عمرها ما بتتعدل ولا تتمسح.';
@@ -135,8 +133,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get chooseBanksTitle => 'التطبيق يقرا رسايل أنهي بنوك؟';
 
   @override
-  String get chooseBanksSubtitle =>
-      'هيقرا من الأسماء دي بس. أي رسالة تانية بتتجاهل ومش بتتخزن.';
+  String get chooseBanksSubtitle => 'هيقرا من الأسماء دي بس. أي رسالة تانية بتتجاهل ومش بتتخزن.';
 
   @override
   String get chooseBanksFootnote =>
@@ -419,8 +416,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get modeAutoHelp => 'المعاملة بتتضاف أول ما الرسالة توصل.';
 
   @override
-  String get modeReviewHelp =>
-      'كل رسالة بتستنى في \"مراجعة\" لحد ما تضيفها أو تتجاهلها.';
+  String get modeReviewHelp => 'كل رسالة بتستنى في \"مراجعة\" لحد ما تضيفها أو تتجاهلها.';
 
   @override
   String filterContains(String text) {
@@ -434,8 +430,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get mustContainLabel => 'بس الرسايل اللي فيها (اختياري)';
 
   @override
-  String get mustContainHelp =>
-      'مثلا Credit Card# عشان يتجاهل رسايل الـ OTP والعروض';
+  String get mustContainHelp => 'مثلا Credit Card# عشان يتجاهل رسايل الـ OTP والعروض';
 
   @override
   String get smsSourceTitle => 'رسايل SMS على الموبايل ده';
@@ -447,15 +442,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get smsNotAllowed => 'قراءة الرسايل مقفولة';
 
   @override
-  String get smsExplainer =>
-      'الرسايل الجديدة من المرسلين المسموح بيهم بتتضاف أول ما توصل.';
+  String get smsExplainer => 'الرسايل الجديدة من المرسلين المسموح بيهم بتتضاف أول ما توصل.';
 
   @override
   String get smsHistoryTitle => 'استيراد الرسايل القديمة';
 
   @override
-  String get smsHistorySubtitle =>
-      'اختار المرسلين، وبعدين علّم على الرسايل اللي عايزها بالظبط';
+  String get smsHistorySubtitle => 'اختار المرسلين، وبعدين علّم على الرسايل اللي عايزها بالظبط';
 
   @override
   String get notificationSourceTitle => 'إشعارات البنك';
@@ -471,8 +464,7 @@ class AppLocalizationsAr extends AppLocalizations {
       'بيقرا إشعارات الرسايل من التطبيقات اللي تعلّم عليها، ومن المرسلين المسموح بيهم بس.';
 
   @override
-  String get notificationAppsEmpty =>
-      'التطبيقات بتظهر هنا بعد ما يجي منها إشعار. تطبيق الرسايل بيظهر الأول.';
+  String get notificationAppsEmpty => 'التطبيقات بتظهر هنا بعد ما يجي منها إشعار. تطبيق الرسايل بيظهر الأول.';
 
   @override
   String get shortcutSourceTitle => 'اختصارات الآيفون';
@@ -481,8 +473,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get shortcutSetupTitle => 'إعداد الاستيراد التلقائي';
 
   @override
-  String get shortcutSetupSubtitle =>
-      'أوتوميشن في Shortcuts بتتعمل مرة واحدة وبتبعت رسايل البنك';
+  String get shortcutSetupSubtitle => 'أوتوميشن في Shortcuts بتتعمل مرة واحدة وبتبعت رسايل البنك';
 
   @override
   String get manualSourcesTitle => 'يدوي';
@@ -507,8 +498,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get iosStep2 => 'اختار Message.';
 
   @override
-  String get iosStep3 =>
-      'في \"Message Contains\" اكتب Credit Card# (أو الكلمة اللي بنكك بيستخدمها دايما).';
+  String get iosStep3 => 'في \"Message Contains\" اكتب Credit Card# (أو الكلمة اللي بنكك بيستخدمها دايما).';
 
   @override
   String get iosStep4 => 'اختار \"Run Immediately\"، وبعدين Next.';
@@ -518,12 +508,10 @@ class AppLocalizationsAr extends AppLocalizations {
       'دوس \"New Blank Automation\"، وبعدين Add Action، دور على CardGuardian واختار \"Add Bank Message\".';
 
   @override
-  String get iosStep6 =>
-      'خلي Message = Shortcut Input → Content، و Sender = Shortcut Input → Sender.';
+  String get iosStep6 => 'خلي Message = Shortcut Input → Content، و Sender = Shortcut Input → Sender.';
 
   @override
-  String get iosStep7 =>
-      'دوس Done. رسايل البنك الجديدة بتتحفظ متشفرة وبتتضاف أول ما تفتح التطبيق.';
+  String get iosStep7 => 'دوس Done. رسايل البنك الجديدة بتتحفظ متشفرة وبتتضاف أول ما تفتح التطبيق.';
 
   @override
   String copyFilterText(String text) {
@@ -549,8 +537,7 @@ class AppLocalizationsAr extends AppLocalizations {
       'الأوتوميشن بتدي نص الرسالة لكارد جارديان بس، على الموبايل ده. والتطبيق بيتجاهل الرسايل من أي مرسل تاني.';
 
   @override
-  String get pasteExplainer =>
-      'الصق رسالة أو رسايل كتير من البنك. هتشوف التطبيق فهم إيه وتختار بالظبط أنهي تتضاف.';
+  String get pasteExplainer => 'الصق رسالة أو رسايل كتير من البنك. هتشوف التطبيق فهم إيه وتختار بالظبط أنهي تتضاف.';
 
   @override
   String get detectAutomatically => 'اكتشاف تلقائي';
@@ -600,12 +587,10 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get smsPermissionNeeded =>
-      'محتاج صلاحية قراءة الرسايل عشان يقرا القديم.';
+  String get smsPermissionNeeded => 'محتاج صلاحية قراءة الرسايل عشان يقرا القديم.';
 
   @override
-  String get smsHistoryExplainer =>
-      'اختار المرسلين. هيتقرا رسايلهم بس، وبعدين تعلّم على اللي عايز تضيفه.';
+  String get smsHistoryExplainer => 'اختار المرسلين. هيتقرا رسايلهم بس، وبعدين تعلّم على اللي عايز تضيفه.';
 
   @override
   String messagesCount(int count) {
@@ -627,8 +612,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get showMessages => 'اعرض الرسايل';
 
   @override
-  String get csvExplainer =>
-      'استخدم ملف CSV من البنك. حدد الأعمدة وشوف معاينة قبل الاستيراد.';
+  String get csvExplainer => 'استخدم ملف CSV من البنك. حدد الأعمدة وشوف معاينة قبل الاستيراد.';
 
   @override
   String get chooseFile => 'اختار ملف';
@@ -746,8 +730,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get noInstallments => 'مفيش أقساط';
 
   @override
-  String get installmentsHelp =>
-      'ضيف المشتريات اللي بتقسطها عشان تشوف فاضل كام.';
+  String get installmentsHelp => 'ضيف المشتريات اللي بتقسطها عشان تشوف فاضل كام.';
 
   @override
   String get addInstallment => 'إضافة تقسيط';
@@ -842,8 +825,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get dueReminders => 'تذكير بميعاد السداد';
 
   @override
-  String get dueRemindersHelp =>
-      'قبلها بـ 3 أيام وفي يومها. من غير ما يظهر أي مبلغ.';
+  String get dueRemindersHelp => 'قبلها بـ 3 أيام وفي يومها. من غير ما يظهر أي مبلغ.';
 
   @override
   String get privacyPromiseTitle => 'إيه اللي بيخرج من موبايلك';
@@ -859,15 +841,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get deleteAllData => 'امسح كل البيانات';
 
   @override
-  String get deleteAllDataHelp =>
-      'الكروت والمعاملات والرسايل والمرسلين. الإعدادات والرقم السري بيفضلوا.';
+  String get deleteAllDataHelp => 'الكروت والمعاملات والرسايل والمرسلين. الإعدادات والرقم السري بيفضلوا.';
 
   @override
   String get deleteAllDataQ => 'تمسح كل البيانات؟';
 
   @override
-  String get deleteAllDataConfirm =>
-      'مفيش رجوع في الخطوة دي. اعمل backup الأول لو ممكن تحتاجها.';
+  String get deleteAllDataConfirm => 'مفيش رجوع في الخطوة دي. اعمل backup الأول لو ممكن تحتاجها.';
 
   @override
   String get allDataDeleted => 'كل البيانات اتمسحت';
@@ -876,8 +856,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get categoriesTitle => 'التصنيفات';
 
   @override
-  String get categoriesHelp =>
-      'غير تصنيف أي معاملة وعلّم على \"استخدم التصنيف ده دايما\" عشان التطبيق يتعلم المكان.';
+  String get categoriesHelp => 'غير تصنيف أي معاملة وعلّم على \"استخدم التصنيف ده دايما\" عشان التطبيق يتعلم المكان.';
 
   @override
   String get addCategory => 'إضافة تصنيف';
@@ -929,8 +908,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get confirmPassphrase => 'أكد كلمة السر';
 
   @override
-  String get passphraseWarning =>
-      '8 حروف على الأقل. مش هينفع تسترجعها لو نسيتها.';
+  String get passphraseWarning => '8 حروف على الأقل. مش هينفع تسترجعها لو نسيتها.';
 
   @override
   String get passphraseTooShort => '8 حروف على الأقل';
@@ -976,4 +954,8 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get deviceCompromisedWarning =>
       'الموبايل ده شكله متعمله root أو jailbreak. ممكن تطبيقات تانية تقدر تقرا بياناتك.';
+
+  @override
+  String get permissionRestrictedHint =>
+      'لم يتم السماح. لو أندرويد قال إنه إعداد مقيّد: الإعدادات ← التطبيقات ← CardGuardian ← ⋮ ← السماح بالإعدادات المقيّدة، وبعدين جرّب تاني.';
 }

@@ -508,5 +508,6 @@
     }
   },
   "reminderBody": "Open CardGuardian for details.",
-  "deviceCompromisedWarning": "This phone looks rooted or jailbroken. Other apps may be able to read your data."
+  "deviceCompromisedWarning": "This phone looks rooted or jailbroken. Other apps may be able to read your data.",
+  "permissionRestrictedHint": "Not allowed. If Android says this is a restricted setting: Settings → Apps → CardGuardian → ⋮ → Allow restricted settings, then try again."
 }

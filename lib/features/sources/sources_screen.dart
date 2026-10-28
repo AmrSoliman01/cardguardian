@@ -94,7 +94,8 @@ class _SourcesScreenState extends ConsumerState<SourcesScreen> with WidgetsBindi
                   ? null
                   : FilledButton(
                       onPressed: () async {
-                        await ref.read(bridgeProvider).requestSmsPermission();
+                        final ok = await ref.read(bridgeProvider).requestSmsPermission();
+                        if (!ok && context.mounted) showSnack(context, l.permissionRestrictedHint);
                         await _refresh();
                         unawaited(ref.read(auditProvider).log(AuditEvent.sourceEnabled, {'source': 'sms'}));
                       },
