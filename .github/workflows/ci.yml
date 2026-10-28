@@ -18,13 +18,15 @@ jobs:
     name: Analyze and test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
           cache: true
       - run: flutter pub get
+      - run: dart pub get
+        working-directory: packages/cg_core
       - name: Privacy check (no tracking packages, no network code)
         run: ./tool/check_privacy.sh
       - name: Generated code is up to date
@@ -36,7 +38,7 @@ jobs:
       - run: flutter analyze
       - name: Core tests
         working-directory: packages/cg_core
-        run: dart pub get && dart test
+        run: dart test
       - name: App tests
         run: flutter test
 
@@ -45,8 +47,8 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
@@ -81,7 +83,7 @@ jobs:
             if grep -q 'android.permission.INTERNET' "perm-$f.txt"; then echo "INTERNET permission found in $f" >&2; exit 1; fi
           done
           if grep -qE 'READ_SMS|RECEIVE_SMS' perm-play.txt; then echo "SMS permission found in play build" >&2; exit 1; fi
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: cardguardian-android
           path: |
@@ -94,7 +96,7 @@ jobs:
     needs: test
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
