@@ -30,11 +30,9 @@ android {
         create("personal") {
             dimension = "channel"
             applicationIdSuffix = ".personal"
-            resValue("string", "app_name", "CardGuardian")
         }
         create("play") {
             dimension = "channel"
-            resValue("string", "app_name", "CardGuardian")
         }
     }
 
