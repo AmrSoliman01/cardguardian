@@ -21,6 +21,9 @@ class TxnFilter {
   final DateTime? from;
   final DateTime? to;
   final int limit;
+
+  TxnFilter copyWithCard(int? cardId) =>
+      TxnFilter(cardId: cardId, categoryId: categoryId, type: type, query: query, from: from, to: to, limit: limit);
 }
 
 enum InsertOutcome { inserted, duplicate }
@@ -182,6 +185,22 @@ class LedgerRepo {
     if (key == null) return null;
     final cat = await (db.select(db.categories)..where((c) => c.key.equals(key!))).getSingleOrNull();
     return cat?.id;
+  }
+
+  /// Which of [hashes] are already stored (to flag duplicates in previews).
+  Future<Set<String>> existingHashes(Iterable<String> hashes) async {
+    final list = hashes.toSet().toList();
+    final found = <String>{};
+    for (var i = 0; i < list.length; i += 500) {
+      final chunk = list.sublist(i, (i + 500).clamp(0, list.length));
+      final rows =
+          await (db.selectOnly(db.transactions)
+                ..addColumns([db.transactions.sourceHash])
+                ..where(db.transactions.sourceHash.isIn(chunk)))
+              .get();
+      found.addAll(rows.map((r) => r.read(db.transactions.sourceHash)!));
+    }
+    return found;
   }
 
   Future<void> updateTransaction(TransactionsCompanion c) => (db.update(

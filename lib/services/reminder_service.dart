@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:timezone/data/latest.dart' as tzdata;
@@ -48,6 +49,19 @@ class ReminderService {
     required String Function(DueItem d, int daysBefore) title,
     required String body,
   }) async {
+    try {
+      await _schedule(dues, title: title, body: body);
+    } catch (e) {
+      // Reminders are best-effort: never let them break the app.
+      debugPrint('Reminders unavailable: $e');
+    }
+  }
+
+  Future<void> _schedule(
+    List<DueItem> dues, {
+    required String Function(DueItem d, int daysBefore) title,
+    required String body,
+  }) async {
     await _init();
     await _plugin.cancelAll();
     final now = tz.TZDateTime.now(tz.local);
@@ -78,7 +92,11 @@ class ReminderService {
   }
 
   Future<void> cancelAll() async {
-    await _init();
-    await _plugin.cancelAll();
+    try {
+      await _init();
+      await _plugin.cancelAll();
+    } catch (e) {
+      debugPrint('Reminders unavailable: $e');
+    }
   }
 }

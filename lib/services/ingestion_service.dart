@@ -52,8 +52,10 @@ class IngestionService {
   final ParserRegistry registry;
 
   /// Ingests [messages]. [bankCode] restricts parsing to one bank (used when
-  /// the user picked the bank on the paste screen).
-  Future<IngestReport> ingest(List<RawMessage> messages, {String? bankCode}) async {
+  /// the user picked the bank on the paste screen). [userPicked] means the
+  /// user ticked these exact messages (history import), so sender rules and
+  /// review mode are skipped for them.
+  Future<IngestReport> ingest(List<RawMessage> messages, {String? bankCode, bool userPicked = false}) async {
     final report = IngestReport();
     if (messages.isEmpty) return report;
     final gate = IngestionGate(await inbox.rules());
@@ -62,7 +64,9 @@ class IngestionService {
     for (final m in messages) {
       final parsed = registry.parse(m, bankCode: bankCode);
       final detected = parsed is ParseSuccess ? parsed.transaction.bankCode : null;
-      final decision = gate.decide(m, detectedBankCode: detected);
+      final decision = userPicked
+          ? GateDecision(GateAction.parse, bankCode: detected, reason: 'user-picked')
+          : gate.decide(m, detectedBankCode: detected);
 
       switch (decision.action) {
         case GateAction.ignore:

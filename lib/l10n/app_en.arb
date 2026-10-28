@@ -1,4 +1,512 @@
 {
   "@@locale": "en",
-  "appTitle": "CardGuardian"
+  "appTitle": "CardGuardian",
+  "ok": "OK",
+  "cancel": "Cancel",
+  "save": "Save",
+  "delete": "Delete",
+  "edit": "Edit",
+  "add": "Add",
+  "next": "Next",
+  "enable": "Enable",
+  "notNow": "Not now",
+  "dismiss": "Dismiss",
+  "allow": "Allow",
+  "manage": "Manage",
+  "required": "Required",
+  "saved": "Saved",
+  "copied": "Copied",
+  "preview": "Preview",
+  "restore": "Restore",
+  "approve": "Add it",
+  "ignore": "Ignore",
+  "navDashboard": "Overview",
+  "navTransactions": "Transactions",
+  "navReview": "Review",
+  "navMore": "More",
+  "sectionMoney": "Money",
+  "sectionSources": "Messages & import",
+  "sectionApp": "App",
+  "lockNow": "Lock now",
+  "welcomeTitle": "Your card data stays on this phone",
+  "privacyPoint1": "No servers, no cloud, no ads, no tracking.",
+  "privacyPoint2": "You choose exactly which bank messages the app reads.",
+  "privacyPoint3": "Everything is encrypted with a key that never leaves the phone.",
+  "privacyPoint4": "Your original messages are never changed or deleted.",
+  "createPin": "Create a PIN",
+  "confirmPin": "Enter the PIN again",
+  "pinHint": "4 to 8 digits. It protects the app even if the phone is unlocked.",
+  "pinMismatch": "PINs didn't match. Try again.",
+  "biometricsTitle": "Unlock with Face ID or fingerprint?",
+  "biometricsSubtitle": "You can still use your PIN anytime.",
+  "enableBiometricsReason": "Confirm to use biometrics for CardGuardian",
+  "chooseBanksTitle": "Which bank messages should the app read?",
+  "chooseBanksSubtitle": "Only these senders are read. Everything else is ignored and never stored.",
+  "chooseBanksFootnote": "You can change senders, add a text filter, or require approval for each message later in Sources.",
+  "finishSetup": "Start",
+  "senderLabel": "Sender: {sender}",
+  "@senderLabel": {
+    "placeholders": {
+      "sender": {
+        "type": "String"
+      }
+    }
+  },
+  "editSender": "Edit sender",
+  "addSender": "Add sender",
+  "senderHelp": "Exactly as it appears in Messages, e.g. ABK-Egypt",
+  "enterPin": "Enter your PIN",
+  "unlockReason": "Unlock CardGuardian",
+  "useBiometrics": "Use Face ID / fingerprint",
+  "pinWrong": "Wrong PIN. {attempts} attempts left.",
+  "@pinWrong": {
+    "placeholders": {
+      "attempts": {
+        "type": "int"
+      }
+    }
+  },
+  "pinLockedOut": "Too many attempts. Try again in {seconds} s.",
+  "@pinLockedOut": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "biometricsUnavailable": "Biometrics are not available on this device.",
+  "previousMonth": "Previous month",
+  "nextMonth": "Next month",
+  "addTransaction": "Add transaction",
+  "editTransaction": "Edit transaction",
+  "noCardsTitle": "No cards yet",
+  "noCardsMessage": "Cards appear by themselves with the first bank message. Choose your bank senders, or paste some messages to start.",
+  "spentThisMonth": "Spent this month",
+  "transactionsCount": "{count, plural, =1{1 transaction} other{{count} transactions}}",
+  "@transactionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "refundsAmount": "Refunds {amount}",
+  "@refundsAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "paymentsAmount": "Paid {amount}",
+  "@paymentsAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "cardsTitle": "Cards",
+  "availableLimit": "Available limit",
+  "upcomingDues": "Upcoming payments",
+  "overdue": "Overdue",
+  "estimated": "estimated",
+  "inDays": "{days, plural, =0{today} =1{tomorrow} other{in {days} days}}",
+  "@inDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "byCategory": "By category",
+  "uncategorized": "Uncategorized",
+  "dailySpending": "Daily spending",
+  "topMerchants": "Top merchants",
+  "noSpendingThisMonth": "No spending recorded this month",
+  "searchMerchant": "Search merchant",
+  "allCards": "All cards",
+  "allTypes": "All types",
+  "allCategories": "All categories",
+  "noTransactions": "No transactions",
+  "typePurchase": "Purchase",
+  "typeRefund": "Refund",
+  "typePayment": "Payment",
+  "typeFee": "Fee",
+  "typeInterest": "Interest",
+  "typeCash": "Cash withdrawal",
+  "typeInstallment": "Installment",
+  "typeReversal": "Reversal",
+  "typeDeclined": "Declined",
+  "card": "Card",
+  "otherCard": "Another card…",
+  "bank": "Bank",
+  "last4": "Last 4 digits",
+  "last4Invalid": "Enter 4 digits",
+  "type": "Type",
+  "amount": "Amount",
+  "amountInvalid": "Enter a valid amount",
+  "currency": "Currency",
+  "currencyInvalid": "3 letters, e.g. EGP",
+  "merchant": "Merchant",
+  "dateTime": "Date and time",
+  "category": "Category",
+  "rememberMerchantCategory": "Always use this category for this merchant",
+  "note": "Note",
+  "sourceInfo": "Source: {source} · read by {parser}",
+  "@sourceInfo": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      },
+      "parser": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteTransactionQ": "Delete this transaction?",
+  "approveAll": "Add all",
+  "approvedCount": "{count} added",
+  "@approvedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reviewEmptyTitle": "Nothing to review",
+  "reviewEmptyMessage": "Messages from senders set to \"Ask me first\", and messages the app could not read, show up here.",
+  "notUnderstood": "Not understood",
+  "waitingApproval": "Waiting for you",
+  "enterManually": "Enter manually",
+  "sourceName": "{source, select, sms{SMS} notification{Notification} shortcut{Shortcut} share{Share} paste{Paste} csv{CSV} other{Manual}}",
+  "@sourceName": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "sourcesTitle": "Sources",
+  "sourcesSubtitle": "Which senders and messages the app may read",
+  "sendersExplainer": "The app reads messages only from the senders below. Turn a sender off to stop reading it. Messages from anyone else are dropped before anything is stored.",
+  "allowedSenders": "Allowed senders",
+  "noSenders": "No senders yet. Nothing will be read automatically.",
+  "modeAuto": "Add automatically",
+  "modeReview": "Ask me first",
+  "modeAutoHelp": "Transactions are added as soon as the message arrives.",
+  "modeReviewHelp": "Each message waits in Review until you add or ignore it.",
+  "filterContains": "only with \"{text}\"",
+  "@filterContains": {
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "senderId": "Sender name",
+  "mustContainLabel": "Only messages containing (optional)",
+  "mustContainHelp": "e.g. Credit Card# to skip OTP and offers",
+  "smsSourceTitle": "SMS on this phone",
+  "smsAllowed": "SMS access is on",
+  "smsNotAllowed": "SMS access is off",
+  "smsExplainer": "New messages from allowed senders are added as they arrive.",
+  "smsHistoryTitle": "Import old messages",
+  "smsHistorySubtitle": "Choose senders, then tick the exact messages",
+  "notificationSourceTitle": "Bank notifications",
+  "notificationsAllowed": "Notification access is on",
+  "notificationsNotAllowed": "Notification access is off",
+  "notificationsExplainer": "Reads SMS notifications from the apps you tick, and only from allowed senders.",
+  "notificationAppsEmpty": "Apps appear here after they show a notification. Your messages app is listed first.",
+  "shortcutSourceTitle": "iPhone Shortcuts",
+  "shortcutSetupTitle": "Set up automatic import",
+  "shortcutSetupSubtitle": "One-time Shortcuts automation that forwards bank SMS",
+  "manualSourcesTitle": "Manual",
+  "pasteImportTitle": "Paste messages",
+  "pasteImportSubtitle": "Copy messages from your inbox and paste them here",
+  "csvImportTitle": "Import CSV file",
+  "iosGuideIntro": "iPhone does not let apps read SMS. A Shortcuts automation can forward each bank message to CardGuardian instead. It runs on the phone; nothing is sent anywhere.",
+  "iosStep1": "Open the Shortcuts app, go to Automation, and tap +.",
+  "iosStep2": "Choose Message.",
+  "iosStep3": "In \"Message Contains\" type Credit Card# (or the text your bank always uses).",
+  "iosStep4": "Choose \"Run Immediately\", then Next.",
+  "iosStep5": "Tap \"New Blank Automation\", Add Action, search CardGuardian and pick \"Add Bank Message\".",
+  "iosStep6": "Set Message to Shortcut Input → Content, and Sender to Shortcut Input → Sender.",
+  "iosStep7": "Tap Done. New bank messages are queued encrypted and added next time you open the app.",
+  "copyFilterText": "Copy \"{text}\"",
+  "@copyFilterText": {
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "iosShareSheetTitle": "From the Share sheet",
+  "iosShareSheetBody": "Make a shortcut with \"Show in Share Sheet\" (input: Text) and the action \"Add Bank Message\". Then select message text, tap Share, and pick that shortcut.",
+  "iosHistoryTitle": "Old messages",
+  "iosHistoryBody": "iPhone has no way to export many messages at once. Copy them and use \"Paste messages\", which can take many messages in one go.",
+  "iosPrivacyNote": "The automation hands the message text only to CardGuardian, on this phone. Messages from other senders are ignored by the app.",
+  "pasteExplainer": "Paste one or many bank messages. You will see what was understood and choose exactly which to import.",
+  "detectAutomatically": "Detect automatically",
+  "pasteHint": "Paste messages here",
+  "pasteFromClipboard": "Paste",
+  "previewCounts": "{total} messages · {parsed} understood · {selected} selected",
+  "@previewCounts": {
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "parsed": {
+        "type": "int"
+      },
+      "selected": {
+        "type": "int"
+      }
+    }
+  },
+  "selectAll": "Select all",
+  "selectNone": "Select none",
+  "alreadyAdded": "already added",
+  "notATransaction": "Not a transaction",
+  "notUnderstoodWillReview": "Not understood: goes to Review if selected",
+  "importSelected": "Import {count}",
+  "@importSelected": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importDone": "Import finished",
+  "importReport": "Added: {added}\nAlready there: {duplicates}\nNeeds review: {review}\nIgnored: {ignored}",
+  "@importReport": {
+    "placeholders": {
+      "added": {
+        "type": "int"
+      },
+      "duplicates": {
+        "type": "int"
+      },
+      "review": {
+        "type": "int"
+      },
+      "ignored": {
+        "type": "int"
+      }
+    }
+  },
+  "autoImportSummary": "{added} new transactions, {review} to review",
+  "@autoImportSummary": {
+    "placeholders": {
+      "added": {
+        "type": "int"
+      },
+      "review": {
+        "type": "int"
+      }
+    }
+  },
+  "smsPermissionNeeded": "SMS access is needed to read old messages.",
+  "smsHistoryExplainer": "Pick the senders to read. Only their messages are loaded, and you then tick the ones to import.",
+  "messagesCount": "{count} messages",
+  "@messagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "howFarBack": "How far back",
+  "lastMonths": "Last {months} months",
+  "@lastMonths": {
+    "placeholders": {
+      "months": {
+        "type": "int"
+      }
+    }
+  },
+  "allTime": "Everything",
+  "showMessages": "Show messages",
+  "csvExplainer": "Use your bank's CSV export. Map the columns once and preview before importing.",
+  "chooseFile": "Choose file",
+  "firstRowIsHeader": "First row is a header",
+  "columnN": "Column {n}",
+  "@columnN": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "dateColumn": "Date column",
+  "dateFormat": "Date format",
+  "merchantColumn": "Description column",
+  "amountColumn": "Amount column",
+  "negativeIsSpend": "Purchases are negative numbers",
+  "currencyColumn": "Currency column",
+  "noCurrencyColumn": "None (all {currency})",
+  "@noCurrencyColumn": {
+    "placeholders": {
+      "currency": {
+        "type": "String"
+      }
+    }
+  },
+  "csvRowErrors": "{count} rows could not be read",
+  "@csvRowErrors": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importRows": "Import {count} rows",
+  "@importRows": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cardsAutoCreated": "A card is added automatically the first time a message mentions it.",
+  "deleteCard": "Delete card",
+  "deleteCardQ": "Delete this card?",
+  "deleteCardMessage": "All its transactions, statements and installments are deleted too.",
+  "asOf": "as of {when}",
+  "@asOf": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "creditLimit": "Credit limit",
+  "statementDay": "Statement day",
+  "dueDay": "Due day",
+  "viewTransactions": "View transactions",
+  "statementsTitle": "Statements & due dates",
+  "noStatements": "No statements. Add one to get due-date reminders.",
+  "due": "Due",
+  "minimumDue": "Minimum",
+  "markPaid": "Mark as paid",
+  "markUnpaid": "Mark as unpaid",
+  "editCard": "Edit card",
+  "nickname": "Nickname",
+  "dayOfMonthHelp": "Day of month, 1–31",
+  "addStatement": "Add statement",
+  "totalDue": "Total due",
+  "dueDate": "Due date",
+  "installmentsTitle": "Installments",
+  "noInstallments": "No installments",
+  "installmentsHelp": "Add purchases you pay in installments to see what is left.",
+  "addInstallment": "Add installment plan",
+  "remainingTotal": "Remaining on all plans",
+  "perMonth": "{amount} per month",
+  "@perMonth": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "monthsProgress": "{paid}/{total} months",
+  "@monthsProgress": {
+    "placeholders": {
+      "paid": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Left",
+  "deleteInstallmentQ": "Delete this installment plan?",
+  "totalAmount": "Total amount",
+  "months": "Months",
+  "firstInstallmentMonth": "First installment month",
+  "settingsTitle": "Settings",
+  "appearance": "Appearance",
+  "language": "Language",
+  "theme": "Theme",
+  "themeSystem": "System",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "security": "Security",
+  "changePin": "Change PIN",
+  "pinChanged": "PIN changed",
+  "autoLock": "Auto-lock",
+  "immediately": "Immediately",
+  "afterMinutes": "After {minutes} min",
+  "@afterMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "blockScreenshots": "Block screenshots",
+  "blockScreenshotsHelp": "Android: blocks screenshots and recording. Both: hides the app in the app switcher.",
+  "privacy": "Privacy",
+  "maxPrivacy": "Maximum privacy",
+  "maxPrivacyHelp": "Delete the app's copy of each message right after it becomes a transaction. Otherwise copies are kept 30 days. Your original messages are never touched.",
+  "dueReminders": "Due-date reminders",
+  "dueRemindersHelp": "3 days before and on the due date. No amounts are shown.",
+  "privacyPromiseTitle": "What leaves your phone",
+  "privacyPromiseBody": "Nothing. No internet permission in the Android release builds, no analytics, no crash reports. Backups and exports only go where you send them.",
+  "dangerZone": "Danger zone",
+  "deleteAllData": "Delete all data",
+  "deleteAllDataHelp": "Cards, transactions, messages and senders. Settings and PIN stay.",
+  "deleteAllDataQ": "Delete all data?",
+  "deleteAllDataConfirm": "This cannot be undone. Make a backup first if you may need it.",
+  "allDataDeleted": "All data deleted",
+  "categoriesTitle": "Categories",
+  "categoriesHelp": "Change a transaction's category and tick \"Always use this category\" to teach the app a merchant.",
+  "addCategory": "Add category",
+  "customCategory": "Custom",
+  "nameArabic": "Name in Arabic",
+  "nameEnglish": "Name in English",
+  "backupTitle": "Backup & export",
+  "backupExplainer": "Backups are encrypted with a passphrase you choose. Keep it safe: without it the backup cannot be opened, by you or anyone.",
+  "createBackup": "Create encrypted backup",
+  "createBackupHelp": "Then save it to Files, Drive or anywhere you like",
+  "restoreBackup": "Restore from backup",
+  "restoreBackupHelp": "Replaces everything in the app",
+  "exportCsv": "Export transactions (CSV)",
+  "exportCsvHelp": "Not encrypted. Opens in Excel or Sheets.",
+  "choosePassphrase": "Choose a backup passphrase",
+  "enterPassphrase": "Backup passphrase",
+  "passphrase": "Passphrase",
+  "confirmPassphrase": "Confirm passphrase",
+  "passphraseWarning": "At least 8 characters. It cannot be recovered.",
+  "passphraseTooShort": "At least 8 characters",
+  "passphraseMismatch": "Passphrases don't match",
+  "restoreQ": "Replace all data with this backup?",
+  "restoreWarning": "Everything currently in the app is replaced.",
+  "restoreDone": "Backup restored",
+  "wrongPassphrase": "Wrong passphrase, or the file was changed.",
+  "notABackup": "This is not a CardGuardian backup.",
+  "auditTitle": "Security log",
+  "auditHelp": "Local record of imports, exports, settings changes and failed unlocks. It never contains amounts or message text.",
+  "reminderToday": "{card}: payment due today",
+  "@reminderToday": {
+    "placeholders": {
+      "card": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderSoon": "{card}: payment due in {days} days",
+  "@reminderSoon": {
+    "placeholders": {
+      "card": {
+        "type": "String"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "reminderBody": "Open CardGuardian for details.",
+  "deviceCompromisedWarning": "This phone looks rooted or jailbroken. Other apps may be able to read your data."
 }
