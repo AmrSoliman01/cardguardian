@@ -55,5 +55,5 @@ final syncBootstrapProvider = Provider<void>((ref) {
 
   ref.listen(settingsProvider.select((s) => s.blockScreenshots), (_, v) {
     unawaited(bridge.setSecureScreen(v));
-  });
+  }, fireImmediately: true);
 });
