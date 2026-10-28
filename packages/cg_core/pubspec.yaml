@@ -1,0 +1,14 @@
+name: cg_core
+description: Pure-Dart core of CardGuardian (models, money, bank SMS parsers, sender rules, CSV import). No Flutter, no I/O.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.10.0
+
+dependencies:
+  crypto: ^3.0.6
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.0
