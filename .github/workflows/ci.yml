@@ -72,8 +72,9 @@ jobs:
           CG_KEY_ALIAS: ${{ secrets.CG_KEY_ALIAS }}
           CG_KEY_PASSWORD: ${{ secrets.CG_KEY_PASSWORD }}
         run: |
-          flutter build apk --release --flavor personal
-          flutter build apk --release --flavor play
+          for f in personal play; do
+            bash tool/ci_annotate.sh "build-$f.log" flutter build apk --release --flavor "$f"
+          done
       - name: Release APKs must not request INTERNET; play must not request SMS
         run: |
           AAPT2=$(ls "$ANDROID_HOME"/build-tools/*/aapt2 | sort -V | tail -1)
@@ -103,4 +104,4 @@ jobs:
           channel: stable
           cache: true
       - run: flutter pub get
-      - run: flutter build ios --release --no-codesign
+      - run: bash tool/ci_annotate.sh build-ios.log flutter build ios --release --no-codesign
