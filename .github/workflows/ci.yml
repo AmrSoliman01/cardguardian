@@ -18,13 +18,15 @@ jobs:
     name: Analyze and test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
           cache: true
       - run: flutter pub get
+      - run: dart pub get
+        working-directory: packages/cg_core
       - name: Privacy check (no tracking packages, no network code)
         run: ./tool/check_privacy.sh
       - name: Generated code is up to date
@@ -36,7 +38,7 @@ jobs:
       - run: flutter analyze
       - name: Core tests
         working-directory: packages/cg_core
-        run: dart pub get && dart test
+        run: dart test
       - name: App tests
         run: flutter test
 
@@ -45,8 +47,8 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
@@ -70,8 +72,9 @@ jobs:
           CG_KEY_ALIAS: ${{ secrets.CG_KEY_ALIAS }}
           CG_KEY_PASSWORD: ${{ secrets.CG_KEY_PASSWORD }}
         run: |
-          flutter build apk --release --flavor personal
-          flutter build apk --release --flavor play
+          for f in personal play; do
+            bash tool/ci_annotate.sh "build-$f.log" flutter build apk --release --flavor "$f"
+          done
       - name: Release APKs must not request INTERNET; play must not request SMS
         run: |
           AAPT2=$(ls "$ANDROID_HOME"/build-tools/*/aapt2 | sort -V | tail -1)
@@ -81,7 +84,7 @@ jobs:
             if grep -q 'android.permission.INTERNET' "perm-$f.txt"; then echo "INTERNET permission found in $f" >&2; exit 1; fi
           done
           if grep -qE 'READ_SMS|RECEIVE_SMS' perm-play.txt; then echo "SMS permission found in play build" >&2; exit 1; fi
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: cardguardian-android
           path: |
@@ -94,11 +97,21 @@ jobs:
     needs: test
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
           cache: true
       - run: flutter pub get
-      - run: flutter build ios --release --no-codesign
+      - run: bash tool/ci_annotate.sh build-ios.log flutter build ios --release --no-codesign
+      - name: Package unsigned IPA (sign it with Sideloadly/AltStore)
+        run: |
+          mkdir -p ipa/Payload
+          cp -R build/ios/iphoneos/Runner.app ipa/Payload/
+          (cd ipa && zip -qr ../CardGuardian-unsigned.ipa Payload)
+      - uses: actions/upload-artifact@v5
+        with:
+          name: cardguardian-ios-unsigned
+          path: CardGuardian-unsigned.ipa
+          retention-days: 30

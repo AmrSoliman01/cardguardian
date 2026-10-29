@@ -21,7 +21,7 @@ See [PRIVACY.md](PRIVACY.md) for the full privacy model and
 | `lib/` | Flutter app (Riverpod, go_router, Drift on SQLCipher). |
 | `android/app/src/personal` | SMS reading, only in the sideloaded `personal` build. |
 | `android/app/src/main/kotlin` | Notification listener, encrypted pending queue, device checks. |
-| `ios/Runner/AppDelegate.swift` | Shortcuts App Intent + encrypted inbox. |
+| `ios/Runner/*.swift` | Shortcuts action (`AddBankMessageIntent`), encrypted inbox, native channel. |
 
 ## Build
 
