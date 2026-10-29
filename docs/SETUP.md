@@ -61,9 +61,25 @@ Also make an encrypted backup from More → Backup before reinstalling.
 iOS doesn't let apps read SMS. CardGuardian uses a Shortcuts automation that
 hands each bank message to the app; the text stays on the phone.
 
-### Installing
+### Installing without a Mac (free Apple ID)
 
-An iPhone app has to be built on a Mac with Xcode:
+CI builds an unsigned app on GitHub's Macs. Sign and install it from Windows:
+
+1. Actions → latest green run → Artifacts → `cardguardian-ios-unsigned`,
+   unzip to get `CardGuardian-unsigned.ipa`.
+2. Install [Sideloadly](https://sideloadly.io) (plus iTunes and iCloud from
+   Apple's website, not the Microsoft Store) on a Windows PC.
+3. Connect the iPhone by cable, drag the IPA into Sideloadly, sign in with
+   your Apple ID and press Start.
+4. On the iPhone: Settings → General → VPN & Device Management → trust your
+   Apple ID. On iOS 16+ also turn on Settings → Privacy & Security →
+   Developer Mode.
+
+A free Apple ID signature lasts 7 days. Re-sign the same way before it runs
+out (Sideloadly can do it automatically over Wi-Fi). Re-signing keeps the
+app's data; deleting the app does not.
+
+### Installing with a Mac
 
 - **Free Apple ID:** open `ios/Runner.xcworkspace` in Xcode, pick your
   personal team under Signing & Capabilities, plug in the phone and Run. The

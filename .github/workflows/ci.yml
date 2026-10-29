@@ -105,3 +105,13 @@ jobs:
           cache: true
       - run: flutter pub get
       - run: bash tool/ci_annotate.sh build-ios.log flutter build ios --release --no-codesign
+      - name: Package unsigned IPA (sign it with Sideloadly/AltStore)
+        run: |
+          mkdir -p ipa/Payload
+          cp -R build/ios/iphoneos/Runner.app ipa/Payload/
+          (cd ipa && zip -qr ../CardGuardian-unsigned.ipa Payload)
+      - uses: actions/upload-artifact@v5
+        with:
+          name: cardguardian-ios-unsigned
+          path: CardGuardian-unsigned.ipa
+          retention-days: 30
