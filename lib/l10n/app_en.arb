@@ -509,5 +509,33 @@
   },
   "reminderBody": "Open CardGuardian for details.",
   "deviceCompromisedWarning": "This phone looks rooted or jailbroken. Other apps may be able to read your data.",
-  "permissionRestrictedHint": "Not allowed. If Android says this is a restricted setting: Settings → Apps → CardGuardian → ⋮ → Allow restricted settings, then try again."
+  "permissionRestrictedHint": "Not allowed. If Android says this is a restricted setting: Settings → Apps → CardGuardian → ⋮ → Allow restricted settings, then try again.",
+  "exportExcel": "Export Excel (import template)",
+  "exportExcelHelp": "Statements, payments and purchases in the credit-card import template",
+  "exportExcelExplainer": "Card nicknames must match your cards in the other app exactly. Leave one empty to use the suggestion shown.",
+  "paidBy": "Paid by",
+  "paidByHelp": "Written in the Payments sheet, e.g. Amr",
+  "cardNicknameFor": "Nickname for {card}",
+  "export": "Export",
+  "exportExcelDone": "Exported {purchases} purchases, {payments} payments, {statements} statements",
+  "@cardNicknameFor": {
+    "placeholders": {
+      "card": {
+        "type": "String"
+      }
+    }
+  },
+  "@exportExcelDone": {
+    "placeholders": {
+      "purchases": {
+        "type": "int"
+      },
+      "payments": {
+        "type": "int"
+      },
+      "statements": {
+        "type": "int"
+      }
+    }
+  }
 }

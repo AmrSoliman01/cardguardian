@@ -100,13 +100,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get privacyPoint1 => 'No servers, no cloud, no ads, no tracking.';
 
   @override
-  String get privacyPoint2 => 'You choose exactly which bank messages the app reads.';
+  String get privacyPoint2 =>
+      'You choose exactly which bank messages the app reads.';
 
   @override
-  String get privacyPoint3 => 'Everything is encrypted with a key that never leaves the phone.';
+  String get privacyPoint3 =>
+      'Everything is encrypted with a key that never leaves the phone.';
 
   @override
-  String get privacyPoint4 => 'Your original messages are never changed or deleted.';
+  String get privacyPoint4 =>
+      'Your original messages are never changed or deleted.';
 
   @override
   String get createPin => 'Create a PIN';
@@ -115,7 +118,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get confirmPin => 'Enter the PIN again';
 
   @override
-  String get pinHint => '4 to 8 digits. It protects the app even if the phone is unlocked.';
+  String get pinHint =>
+      '4 to 8 digits. It protects the app even if the phone is unlocked.';
 
   @override
   String get pinMismatch => 'PINs didn\'t match. Try again.';
@@ -127,13 +131,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get biometricsSubtitle => 'You can still use your PIN anytime.';
 
   @override
-  String get enableBiometricsReason => 'Confirm to use biometrics for CardGuardian';
+  String get enableBiometricsReason =>
+      'Confirm to use biometrics for CardGuardian';
 
   @override
   String get chooseBanksTitle => 'Which bank messages should the app read?';
 
   @override
-  String get chooseBanksSubtitle => 'Only these senders are read. Everything else is ignored and never stored.';
+  String get chooseBanksSubtitle =>
+      'Only these senders are read. Everything else is ignored and never stored.';
 
   @override
   String get chooseBanksFootnote =>
@@ -176,7 +182,8 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get biometricsUnavailable => 'Biometrics are not available on this device.';
+  String get biometricsUnavailable =>
+      'Biometrics are not available on this device.';
 
   @override
   String get previousMonth => 'Previous month';
@@ -345,7 +352,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get category => 'Category';
 
   @override
-  String get rememberMerchantCategory => 'Always use this category for this merchant';
+  String get rememberMerchantCategory =>
+      'Always use this category for this merchant';
 
   @override
   String get note => 'Note';
@@ -419,10 +427,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get modeReview => 'Ask me first';
 
   @override
-  String get modeAutoHelp => 'Transactions are added as soon as the message arrives.';
+  String get modeAutoHelp =>
+      'Transactions are added as soon as the message arrives.';
 
   @override
-  String get modeReviewHelp => 'Each message waits in Review until you add or ignore it.';
+  String get modeReviewHelp =>
+      'Each message waits in Review until you add or ignore it.';
 
   @override
   String filterContains(String text) {
@@ -448,13 +458,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get smsNotAllowed => 'SMS access is off';
 
   @override
-  String get smsExplainer => 'New messages from allowed senders are added as they arrive.';
+  String get smsExplainer =>
+      'New messages from allowed senders are added as they arrive.';
 
   @override
   String get smsHistoryTitle => 'Import old messages';
 
   @override
-  String get smsHistorySubtitle => 'Choose senders, then tick the exact messages';
+  String get smsHistorySubtitle =>
+      'Choose senders, then tick the exact messages';
 
   @override
   String get notificationSourceTitle => 'Bank notifications';
@@ -466,7 +478,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notificationsNotAllowed => 'Notification access is off';
 
   @override
-  String get notificationsExplainer => 'Reads SMS notifications from the apps you tick, and only from allowed senders.';
+  String get notificationsExplainer =>
+      'Reads SMS notifications from the apps you tick, and only from allowed senders.';
 
   @override
   String get notificationAppsEmpty =>
@@ -479,7 +492,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get shortcutSetupTitle => 'Set up automatic import';
 
   @override
-  String get shortcutSetupSubtitle => 'One-time Shortcuts automation that forwards bank SMS';
+  String get shortcutSetupSubtitle =>
+      'One-time Shortcuts automation that forwards bank SMS';
 
   @override
   String get manualSourcesTitle => 'Manual';
@@ -488,7 +502,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pasteImportTitle => 'Paste messages';
 
   @override
-  String get pasteImportSubtitle => 'Copy messages from your inbox and paste them here';
+  String get pasteImportSubtitle =>
+      'Copy messages from your inbox and paste them here';
 
   @override
   String get csvImportTitle => 'Import CSV file';
@@ -504,19 +519,23 @@ class AppLocalizationsEn extends AppLocalizations {
   String get iosStep2 => 'Choose Message.';
 
   @override
-  String get iosStep3 => 'In \"Message Contains\" type Credit Card# (or the text your bank always uses).';
+  String get iosStep3 =>
+      'In \"Message Contains\" type Credit Card# (or the text your bank always uses).';
 
   @override
   String get iosStep4 => 'Choose \"Run Immediately\", then Next.';
 
   @override
-  String get iosStep5 => 'Tap \"New Blank Automation\", Add Action, search CardGuardian and pick \"Add Bank Message\".';
+  String get iosStep5 =>
+      'Tap \"New Blank Automation\", Add Action, search CardGuardian and pick \"Add Bank Message\".';
 
   @override
-  String get iosStep6 => 'Set Message to Shortcut Input → Content, and Sender to Shortcut Input → Sender.';
+  String get iosStep6 =>
+      'Set Message to Shortcut Input → Content, and Sender to Shortcut Input → Sender.';
 
   @override
-  String get iosStep7 => 'Tap Done. New bank messages are queued encrypted and added next time you open the app.';
+  String get iosStep7 =>
+      'Tap Done. New bank messages are queued encrypted and added next time you open the app.';
 
   @override
   String copyFilterText(String text) {
@@ -572,7 +591,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notATransaction => 'Not a transaction';
 
   @override
-  String get notUnderstoodWillReview => 'Not understood: goes to Review if selected';
+  String get notUnderstoodWillReview =>
+      'Not understood: goes to Review if selected';
 
   @override
   String importSelected(int count) {
@@ -593,7 +613,8 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get smsPermissionNeeded => 'SMS access is needed to read old messages.';
+  String get smsPermissionNeeded =>
+      'SMS access is needed to read old messages.';
 
   @override
   String get smsHistoryExplainer =>
@@ -619,7 +640,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get showMessages => 'Show messages';
 
   @override
-  String get csvExplainer => 'Use your bank\'s CSV export. Map the columns once and preview before importing.';
+  String get csvExplainer =>
+      'Use your bank\'s CSV export. Map the columns once and preview before importing.';
 
   @override
   String get chooseFile => 'Choose file';
@@ -666,7 +688,8 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get cardsAutoCreated => 'A card is added automatically the first time a message mentions it.';
+  String get cardsAutoCreated =>
+      'A card is added automatically the first time a message mentions it.';
 
   @override
   String get deleteCard => 'Delete card';
@@ -675,7 +698,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get deleteCardQ => 'Delete this card?';
 
   @override
-  String get deleteCardMessage => 'All its transactions, statements and installments are deleted too.';
+  String get deleteCardMessage =>
+      'All its transactions, statements and installments are deleted too.';
 
   @override
   String asOf(String when) {
@@ -698,7 +722,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get statementsTitle => 'Statements & due dates';
 
   @override
-  String get noStatements => 'No statements. Add one to get due-date reminders.';
+  String get noStatements =>
+      'No statements. Add one to get due-date reminders.';
 
   @override
   String get due => 'Due';
@@ -737,7 +762,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noInstallments => 'No installments';
 
   @override
-  String get installmentsHelp => 'Add purchases you pay in installments to see what is left.';
+  String get installmentsHelp =>
+      'Add purchases you pay in installments to see what is left.';
 
   @override
   String get addInstallment => 'Add installment plan';
@@ -832,7 +858,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dueReminders => 'Due-date reminders';
 
   @override
-  String get dueRemindersHelp => '3 days before and on the due date. No amounts are shown.';
+  String get dueRemindersHelp =>
+      '3 days before and on the due date. No amounts are shown.';
 
   @override
   String get privacyPromiseTitle => 'What leaves your phone';
@@ -848,13 +875,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get deleteAllData => 'Delete all data';
 
   @override
-  String get deleteAllDataHelp => 'Cards, transactions, messages and senders. Settings and PIN stay.';
+  String get deleteAllDataHelp =>
+      'Cards, transactions, messages and senders. Settings and PIN stay.';
 
   @override
   String get deleteAllDataQ => 'Delete all data?';
 
   @override
-  String get deleteAllDataConfirm => 'This cannot be undone. Make a backup first if you may need it.';
+  String get deleteAllDataConfirm =>
+      'This cannot be undone. Make a backup first if you may need it.';
 
   @override
   String get allDataDeleted => 'All data deleted';
@@ -889,7 +918,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get createBackup => 'Create encrypted backup';
 
   @override
-  String get createBackupHelp => 'Then save it to Files, Drive or anywhere you like';
+  String get createBackupHelp =>
+      'Then save it to Files, Drive or anywhere you like';
 
   @override
   String get restoreBackup => 'Restore from backup';
@@ -916,7 +946,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get confirmPassphrase => 'Confirm passphrase';
 
   @override
-  String get passphraseWarning => 'At least 8 characters. It cannot be recovered.';
+  String get passphraseWarning =>
+      'At least 8 characters. It cannot be recovered.';
 
   @override
   String get passphraseTooShort => 'At least 8 characters';
@@ -966,4 +997,34 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get permissionRestrictedHint =>
       'Not allowed. If Android says this is a restricted setting: Settings → Apps → CardGuardian → ⋮ → Allow restricted settings, then try again.';
+
+  @override
+  String get exportExcel => 'Export Excel (import template)';
+
+  @override
+  String get exportExcelHelp =>
+      'Statements, payments and purchases in the credit-card import template';
+
+  @override
+  String get exportExcelExplainer =>
+      'Card nicknames must match your cards in the other app exactly. Leave one empty to use the suggestion shown.';
+
+  @override
+  String get paidBy => 'Paid by';
+
+  @override
+  String get paidByHelp => 'Written in the Payments sheet, e.g. Amr';
+
+  @override
+  String cardNicknameFor(String card) {
+    return 'Nickname for $card';
+  }
+
+  @override
+  String get export => 'Export';
+
+  @override
+  String exportExcelDone(int purchases, int payments, int statements) {
+    return 'Exported $purchases purchases, $payments payments, $statements statements';
+  }
 }

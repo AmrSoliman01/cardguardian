@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:drift/drift.dart' show Value;
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -10,9 +11,12 @@ import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../core/providers.dart';
+import '../../data/db/database.dart';
 import '../../data/repos/audit_repo.dart';
 import '../../l10n/app_localizations.dart';
 import '../../services/backup_service.dart';
+import '../../services/excel_export_service.dart';
+import '../../ui/format.dart';
 import '../../ui/widgets.dart';
 
 /// Encrypted backup/restore and CSV export. Files are only handed to the
@@ -147,6 +151,77 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
     });
   }
 
+  /// Asks for "Paid by" and the card nicknames the import template needs,
+  /// then exports the workbook.
+  Future<void> _exportExcel() async {
+    final l = AppLocalizations.of(context);
+    final settings = ref.read(settingsRepoProvider);
+    final ledger = ref.read(ledgerProvider);
+    final cards = await ledger.cards();
+    final paidBy = TextEditingController(text: await settings.getRaw('exportPaidBy') ?? '');
+    final nicks = {for (final c in cards) c.id: TextEditingController(text: c.nickname ?? '')};
+    if (!mounted) return;
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (c) => AlertDialog(
+        title: Text(l.exportExcel),
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(l.exportExcelExplainer, style: Theme.of(c).textTheme.bodySmall),
+              const SizedBox(height: 12),
+              TextField(
+                controller: paidBy,
+                decoration: InputDecoration(labelText: l.paidBy, helperText: l.paidByHelp),
+              ),
+              for (final card in cards) ...[
+                const SizedBox(height: 12),
+                ListenableBuilder(
+                  listenable: paidBy,
+                  builder: (c, _) => TextField(
+                    controller: nicks[card.id],
+                    decoration: InputDecoration(
+                      labelText: l.cardNicknameFor('${bankName(c, card.bankCode)} •${card.last4}'),
+                      hintText: ExcelExportService.cardNickname(
+                        card.copyWith(nickname: const Value(null)),
+                        cards,
+                        paidBy.text,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(c, false), child: Text(l.cancel)),
+          FilledButton(onPressed: () => Navigator.pop(c, true), child: Text(l.export)),
+        ],
+      ),
+    );
+    if (ok != true) return;
+    await _run(() async {
+      await settings.setRaw('exportPaidBy', paidBy.text.trim());
+      for (final card in cards) {
+        final n = nicks[card.id]!.text.trim();
+        if (n != (card.nickname ?? '')) {
+          await ledger.updateCard(CardsCompanion(id: Value(card.id), nickname: Value(n.isEmpty ? null : n)));
+        }
+      }
+      final r = await ref.read(excelExportServiceProvider).build(paidBy: paidBy.text.trim());
+      await ref.read(auditProvider).log(AuditEvent.exportCreated, {'format': 'xlsx'});
+      await _shareFile(
+        'cardguardian-${_stamp()}.xlsx',
+        r.bytes,
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      );
+      if (mounted) showSnack(context, l.exportExcelDone(r.purchases, r.payments, r.statements));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
@@ -176,6 +251,12 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
               title: Text(l.exportCsv),
               subtitle: Text(l.exportCsvHelp),
               onTap: _exportCsv,
+            ),
+            ListTile(
+              leading: const Icon(Icons.grid_on_outlined),
+              title: Text(l.exportExcel),
+              subtitle: Text(l.exportExcelHelp),
+              onTap: _exportExcel,
             ),
           ],
         ),

@@ -7,6 +7,7 @@ import '../data/repos/inbox_repo.dart';
 import '../data/repos/ledger_repo.dart';
 import '../data/repos/settings_repo.dart';
 import '../services/backup_service.dart';
+import '../services/excel_export_service.dart';
 import '../services/export_service.dart';
 import '../services/ingestion_service.dart';
 import '../services/key_store.dart';
@@ -28,6 +29,9 @@ final inboxProvider = Provider<InboxRepo>((ref) => InboxRepo(ref.watch(databaseP
 final auditProvider = Provider<AuditRepo>((ref) => AuditRepo(ref.watch(databaseProvider)));
 final settingsRepoProvider = Provider<SettingsRepo>((ref) => SettingsRepo(ref.watch(databaseProvider)));
 final backupServiceProvider = Provider<BackupService>((ref) => BackupService(ref.watch(databaseProvider)));
+final excelExportServiceProvider = Provider<ExcelExportService>(
+  (ref) => ExcelExportService(ref.watch(databaseProvider), ref.watch(ledgerProvider)),
+);
 final exportServiceProvider = Provider<ExportService>((ref) => ExportService(ref.watch(ledgerProvider)));
 
 final ingestionProvider = Provider<IngestionService>(
